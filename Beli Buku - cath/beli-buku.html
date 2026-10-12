@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jual Beli Buku — BookRescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../sidebar.css">
+  <link rel="stylesheet" href="beli-buku.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="brand-row">
+        <a class="brand" href="../Onboarding - clar/index.html">
+          <img src="../img/kucing.webp" alt="BookRescue">
+          <span>BookRescue</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Buka menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+      <div class="sidebar-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>Search</span>
+      </div>
+      <nav class="nav-list">
+        <a class="nav-link" href="../Home - clar/home.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a class="nav-link" href="../Daftar Forum - ilen/forum.html"><i class="fa-regular fa-comments"></i><span>Forum</span></a>
+        <a class="nav-link active" href="beli-buku.html"><i class="fa-solid fa-tag"></i><span>Jual / Beli</span></a>
+        <a class="nav-link notifications" href="../Inbox - nabila/inbox.html">
+          <span class="nav-label"><i class="fa-regular fa-bell"></i><span>Notifications</span></span>
+          <span class="notification-count">12</span>
+        </a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <nav class="bottom-nav">
+        <a class="nav-link" href="#"><i class="fa-regular fa-circle-question"></i><span>Support</span></a>
+        <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+      <a class="profile-card" href="../Profil - vania/profile.html">
+        <div class="profile-avatar"><i class="fa-solid fa-user"></i><span class="online-dot"></span></div>
+        <div class="profile-info">
+          <div class="profile-name">Anonymous</div>
+          <div class="profile-email">anonymous@gmail.com</div>
+        </div>
+        <i class="fa-solid fa-chevron-right profile-menu" style="font-size:11px;"></i>
+      </a>
+    </aside>
+
+    <main class="page">
+      <h1>Jual Beli Buku</h1>
+
+      <div class="mode-tabs">
+        <a class="mode-tab" href="../Jual Buku - ilen/jual-buku.html">Jual Buku</a>
+        <a class="mode-tab active" href="beli-buku.html" aria-current="page">Beli Buku</a>
+      </div>
+
+      <label class="search-box">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" placeholder="cari judul buku, penulis, atau kategori..." aria-label="Cari buku">
+      </label>
+
+      <div class="filter-row">
+        <div class="condition-tabs" aria-label="Filter kondisi buku">
+          <button type="button" class="condition active" data-filter="Semua" aria-pressed="true">Semua</button>
+          <button type="button" class="condition" data-filter="Bekas-Baik" aria-pressed="false">Bekas-Baik</button>
+          <button type="button" class="condition" data-filter="Bekas-Kurang" aria-pressed="false">Bekas-Kurang</button>
+        </div>
+        <a class="filter-button" href="../Filter Buku - ilen/filter-buku.html">
+          <i class="fa-solid fa-filter" aria-hidden="true"></i>
+          <span>Filter</span>
+          <i class="fa-solid fa-chevron-down filter-chevron" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <section class="book-grid" aria-label="Daftar buku">
+
+        <article class="book-card" data-condition="Bekas-Baik">
+          <div class="book-cover"><img src="../img/sampulbukubiologi.jpe" alt="Sampul Buku Biologi"></div>
+          <div class="book-details">
+            <strong class="book-title">Biologi SMA 12<br>(Kurikulum Merdeka)</strong>
+            <span class="author">Irraningtayas</span>
+            <b class="price">Rp 75.000,00</b>
+            <span class="rating"><i class="fa-solid fa-star"></i> 4.9 <i class="fa-solid fa-location-dot pin"></i> 0.8 km</span>
+          </div>
+          <span class="condition-label good">Bekas-Baik</span>
+          <button class="bookmark" type="button" aria-label="Simpan Biologi" aria-pressed="false"><i class="fa-regular fa-bookmark"></i></button>
+          <a class="card-arrow" href="../Buku Satuan - cath/beli-bukusatuan.html" aria-label="Lihat detail Biologi"><i class="fa-solid fa-chevron-right"></i></a>
+        </article>
+
+        <article class="book-card" data-condition="Bekas-Baik">
+          <div class="book-cover"><img src="../img/sampulbukumat.jpe" alt="Sampul Buku Matematika"></div>
+          <div class="book-details">
+            <strong class="book-title">Matematika Wajib SMA<br>11 (Kurikulum Merdeka)</strong>
+            <span class="author">Cahyadi Baru</span>
+            <b class="price">Rp 85.000,00</b>
+            <span class="rating"><i class="fa-solid fa-star"></i> 4.7 <i class="fa-solid fa-location-dot pin"></i> 0.4 km</span>
+          </div>
+          <span class="condition-label good">Bekas-Baik</span>
+          <button class="bookmark" type="button" aria-label="Simpan Matematika" aria-pressed="false"><i class="fa-regular fa-bookmark"></i></button>
+          <a class="card-arrow" href="../Buku Satuan - cath/beli-bukusatuan.html" aria-label="Lihat detail Matematika"><i class="fa-solid fa-chevron-right"></i></a>
+        </article>
+
+        <article class="book-card" data-condition="Bekas-Kurang">
+          <div class="book-cover"><img src="../img/sampulbukupkn.jpe" alt="Sampul Buku PKn"></div>
+          <div class="book-details">
+            <strong class="book-title">Pendidikan Pancasila dan Kewarganegaraan</strong>
+            <span class="author">Muhamad Taupan, Ine Ariyani Suwita</span>
+            <b class="price">Rp 85.000,00</b>
+            <span class="rating"><i class="fa-solid fa-star"></i> 4.8 <i class="fa-solid fa-location-dot pin"></i> 0.2 km</span>
+          </div>
+          <span class="condition-label poor">Bekas-Kurang</span>
+          <button class="bookmark" type="button" aria-label="Simpan PKn" aria-pressed="false"><i class="fa-regular fa-bookmark"></i></button>
+          <a class="card-arrow" href="../Buku Satuan - cath/beli-bukusatuan.html" aria-label="Lihat detail PKn"><i class="fa-solid fa-chevron-right"></i></a>
+        </article>
+
+        <article class="book-card" data-condition="Bekas-Baik">
+          <div class="book-cover"><img src="../img/sampulbukukbumi.jpg" alt="Sampul Buku Serial Bumi"></div>
+          <div class="book-details">
+            <strong class="book-title">Serial Bumi</strong>
+            <span class="author">Tere Liye</span>
+            <b class="price">Rp 105.000,00</b>
+            <span class="rating"><i class="fa-solid fa-star"></i> 4.8 <i class="fa-solid fa-location-dot pin"></i> 0.8 km</span>
+          </div>
+          <span class="condition-label good">Bekas-Baik</span>
+          <button class="bookmark" type="button" aria-label="Simpan Serial Bumi" aria-pressed="false"><i class="fa-regular fa-bookmark"></i></button>
+          <a class="card-arrow" href="../Buku Satuan - cath/beli-bukusatuan.html" aria-label="Lihat detail Serial Bumi"><i class="fa-solid fa-chevron-right"></i></a>
+        </article>
+
+        <article class="book-card" data-condition="Bekas-Baik">
+          <div class="book-cover"><img src="../img/sampulbukufisika.webp" alt="Sampul Buku Fisika"></div>
+          <div class="book-details">
+            <strong class="book-title">Fisika SMA 11<br>(Kurikulum Merdeka)</strong>
+            <span class="author">Irraningtayas</span>
+            <b class="price">Rp 75.000,00</b>
+            <span class="rating"><i class="fa-solid fa-star"></i> 4.9 <i class="fa-solid fa-location-dot pin"></i> 0.5 km</span>
+          </div>
+          <span class="condition-label good">Bekas-Baik</span>
+          <button class="bookmark" type="button" aria-label="Simpan Fisika" aria-pressed="false"><i class="fa-regular fa-bookmark"></i></button>
+          <a class="card-arrow" href="../Buku Satuan - cath/beli-bukusatuan.html" aria-label="Lihat detail Fisika"><i class="fa-solid fa-chevron-right"></i></a>
+        </article>
+
+        <article class="book-card" data-condition="Bekas-Baik">
+          <div class="book-cover"><img src="../img/sampulbukulaskar.jpg" alt="Sampul Buku Laskar Pelangi"></div>
+          <div class="book-details">
+            <strong class="book-title">Laskar Pelangi</strong>
+            <span class="author">Andrea Hirata</span>
+            <b class="price">Rp 55.000,00</b>
+            <span class="rating"><i class="fa-solid fa-star"></i> 4.8 <i class="fa-solid fa-location-dot pin"></i> 10 km</span>
+          </div>
+          <span class="condition-label good">Bekas-Baik</span>
+          <button class="bookmark" type="button" aria-label="Simpan Laskar Pelangi" aria-pressed="false"><i class="fa-regular fa-bookmark"></i></button>
+          <a class="card-arrow" href="../Buku Satuan - cath/beli-bukusatuan.html" aria-label="Lihat detail Laskar Pelangi"><i class="fa-solid fa-chevron-right"></i></a>
+        </article>
+
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const conditionButtons = document.querySelectorAll('[data-filter]');
+    const bookCards = document.querySelectorAll('.book-card');
+
+    conditionButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const selected = btn.dataset.filter;
+        conditionButtons.forEach((item) => {
+          const isActive = item === btn;
+          item.classList.toggle('active', isActive);
+          item.setAttribute('aria-pressed', String(isActive));
+        });
+        bookCards.forEach((card) => {
+          card.hidden = selected !== 'Semua' && card.dataset.condition !== selected;
+        });
+      });
+    });
+
+    document.querySelectorAll('.bookmark').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const saved = btn.classList.toggle('is-saved');
+        btn.setAttribute('aria-pressed', String(saved));
+        const icon = btn.querySelector('i');
+        icon.classList.toggle('fa-regular', !saved);
+        icon.classList.toggle('fa-solid', saved);
+      });
+    });
+
+    const searchInput = document.querySelector('.search-box input');
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLocaleLowerCase('id');
+      const selectedFilter = document.querySelector('[data-filter].active')?.dataset.filter || 'Semua';
+      bookCards.forEach((card) => {
+        const matchesFilter = selectedFilter === 'Semua' || card.dataset.condition === selectedFilter;
+        const matchesQuery = card.textContent.toLocaleLowerCase('id').includes(query);
+        card.hidden = !(matchesFilter && matchesQuery);
+      });
+    });
+  </script>
+</body>
+</html>

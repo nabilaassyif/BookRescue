@@ -1,0 +1,287 @@
+/* ================================================
+   RIWAYAT TRANSAKSI
+   Color palette: BookRescue brand guide
+   ================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: #F6FAFF;
+  color: #1B2A41;
+}
+
+/* ---- Konten utama ---- */
+.page {
+  padding: 32px 28px 40px;
+}
+
+/* Header */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: #DCEAFB;
+  color: #2F80ED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.back-btn:hover { background: #c8dcf7; }
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1B2A41;
+}
+
+/* Tab */
+.tab-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+  max-width: 480px;
+}
+
+.rtab {
+  height: 38px;
+  border: 0;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  background: #DCEAFB;
+  color: #1E63C9;
+  transition: background 0.2s, color 0.2s;
+}
+
+.rtab.active {
+  background: #2F80ED;
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(47, 128, 237, 0.28);
+}
+
+.rtab:not(.active):hover { background: #c8dcf7; }
+
+/* Stats bar */
+.stats-bar {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #E6EDF6;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+}
+
+.stat-item.bordered {
+  border-left: 1px solid #E6EDF6;
+  border-right: 1px solid #E6EDF6;
+}
+
+.stat-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #DCEAFB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2F80ED;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.stat-label {
+  color: #7C8BA1;
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1B2A41;
+  line-height: 1;
+}
+
+/* Daftar transaksi */
+.tx-list {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #E6EDF6;
+  padding: 0 16px;
+}
+
+.tx-row {
+  min-height: 88px;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 130px 80px;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  border-bottom: 1px solid #E6EDF6;
+}
+
+.tx-row:last-child { border-bottom: none; }
+
+/* Sampul mini */
+.tx-cover {
+  width: 48px;
+  height: 68px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7px;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.25;
+  flex-shrink: 0;
+}
+
+.tx-cover-bio     { background: linear-gradient(145deg, #182b5d, #050b22); color: #ffe342; }
+.tx-cover-dilan   { background: #8ba5a0; color: #3f514e; }
+.tx-cover-laskar  { background: linear-gradient(160deg, #db1462, #171124); color: #fff; }
+.tx-cover-filosofi { background: #fffaf0; border: 1px solid #f1d17a; color: #555; font-size: 6px; }
+.tx-cover-bumi    { background: linear-gradient(160deg, #151515, #66310d); color: #e9d2a0; font-size: 6px; }
+
+/* Info buku */
+.tx-info { min-width: 0; }
+
+.tx-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1B2A41;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tx-subtitle {
+  color: #7C8BA1;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.tx-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.tx-badge.buy    { background: #2F80ED; }
+.tx-badge.sell   { background: #7059C4; }
+.tx-badge.donate { background: #FFB800; color: #1B2A41; }
+
+.tx-date {
+  color: #7C8BA1;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+/* Harga + status */
+.tx-price-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tx-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1B2A41;
+}
+
+.tx-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tx-status.completed  { background: #E0F8EE; color: #1E8E5A; }
+.tx-status.processing { background: #DCEAFB; color: #1E63C9; }
+.tx-status.cancelled  { background: #FFF0EE; color: #C5192D; }
+
+/* Tombol detail */
+.tx-detail-btn {
+  width: 72px;
+  height: 28px;
+  background: #fff;
+  border: 1px solid #2F80ED;
+  border-radius: 999px;
+  color: #2F80ED;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.tx-detail-btn:hover { background: #EAF3FF; }
+
+/* ---- Responsif ---- */
+@media (max-width: 860px) {
+  .page { padding: 24px 20px 32px; }
+  .tx-row { grid-template-columns: 52px minmax(0, 1fr) 110px 68px; }
+  .stat-item { padding: 14px 14px; }
+}
+
+@media (max-width: 600px) {
+  .page { padding: 20px 14px 28px; }
+  h1 { font-size: 18px; }
+  .tab-row { max-width: 100%; }
+  .stats-bar { grid-template-columns: 1fr; }
+  .stat-item.bordered {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #E6EDF6;
+    border-bottom: 1px solid #E6EDF6;
+  }
+  .tx-row {
+    grid-template-columns: 48px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+  }
+  .tx-cover { grid-row: 1 / 3; }
+  .tx-price-col { grid-column: 2; flex-direction: row; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .tx-detail-btn { grid-column: 2; justify-self: start; margin-top: 4px; }
+}
+
+@media (max-width: 420px) {
+  .tx-price-col, .tx-detail-btn { display: none; }
+}

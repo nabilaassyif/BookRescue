@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forum — BookRescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../sidebar.css">
+  <link rel="stylesheet" href="forum.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="brand-row">
+        <a class="brand" href="../Onboarding - clar/index.html">
+          <img src="../img/kucing.webp" alt="BookRescue">
+          <span>BookRescue</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <div class="sidebar-search"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></div>
+      <nav class="nav-list">
+        <a class="nav-link" href="../Home - clar/home.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a class="nav-link active" href="forum.html"><i class="fa-regular fa-comments"></i><span>Forum</span></a>
+        <a class="nav-link" href="../Beli Buku - cath/beli-buku.html"><i class="fa-solid fa-tag"></i><span>Jual / Beli</span></a>
+        <a class="nav-link notifications" href="../Inbox - nabila/inbox.html">
+          <span class="nav-label"><i class="fa-regular fa-bell"></i><span>Notifications</span></span>
+          <span class="notification-count">12</span>
+        </a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <nav class="bottom-nav">
+        <a class="nav-link" href="#"><i class="fa-regular fa-circle-question"></i><span>Support</span></a>
+        <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+      <a class="profile-card" href="../Profil - vania/profile.html">
+        <div class="profile-avatar"><i class="fa-solid fa-user"></i><span class="online-dot"></span></div>
+        <div class="profile-info">
+          <div class="profile-name">Anonymous</div>
+          <div class="profile-email">anonymous@gmail.com</div>
+        </div>
+        <i class="fa-solid fa-chevron-right profile-menu" style="font-size:11px;"></i>
+      </a>
+    </aside>
+
+    <main class="main">
+      <div class="page-header">
+        <h1>Forum</h1>
+        <button class="add-btn" type="button" aria-label="Buat diskusi baru"><i class="fa-solid fa-plus"></i></button>
+      </div>
+
+      <div class="search-forum">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Cari ruang diskusi...">
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" id="tabDiskusi" type="button" onclick="showDiskusi()">Ruang Diskusi</button>
+        <button class="tab" id="tabPenjual" type="button" onclick="showPenjual()">Pesan Penjual</button>
+      </div>
+
+      <!-- Ruang Diskusi -->
+      <section class="thread-list" id="panelDiskusi">
+        <a href="../Chat Forum - nabila/forum-chat.html" class="thread">
+          <div class="thread-icon blue"><i class="fa-solid fa-user-group"></i></div>
+          <div class="thread-text">
+            <h3>Buku Kuliah Teknik</h3>
+            <p>Aldi: Ada yang punya buku Teknik ini ga yaa</p>
+          </div>
+          <div class="thread-meta"><span class="time">09:03</span><span class="unread">5</span></div>
+        </a>
+        <a href="../Chat Forum - nabila/forum-chat.html" class="thread">
+          <div class="thread-icon orange"><i class="fa-solid fa-book-bookmark"></i></div>
+          <div class="thread-text">
+            <h3>Cari Buku SMA</h3>
+            <p>Bu Rina: Butuh paket buku IPA kelas XI</p>
+          </div>
+          <div class="thread-meta"><span class="time">Kemarin</span></div>
+        </a>
+        <a href="../Chat Forum - nabila/forum-chat.html" class="thread">
+          <div class="thread-icon yellow"><i class="fa-regular fa-star"></i></div>
+          <div class="thread-text">
+            <h3>Resensi dan Rekomendasi</h3>
+            <p>Maya: Novel ini wajib dibaca, seru banget!!</p>
+          </div>
+          <div class="thread-meta"><span class="time">21:49</span><span class="unread">3</span></div>
+        </a>
+        <a href="../Chat Forum - nabila/forum-chat.html" class="thread">
+          <div class="thread-icon purple"><i class="fa-solid fa-tag"></i></div>
+          <div class="thread-text">
+            <h3>Info Bazar Buku</h3>
+            <p>Admin: Bazar Sabtu di Perpustakaan Bersama</p>
+          </div>
+          <div class="thread-meta"><span class="time">18 Sep</span></div>
+        </a>
+      </section>
+
+      <!-- Pesan Penjual -->
+      <section class="seller-list" id="panelPenjual">
+        <a href="../Chat Forum - nabila/forum-chat.html" class="seller-item">
+          <div class="seller-avatar">
+            <i class="fa-solid fa-user"></i>
+            <span class="online-dot"></span>
+          </div>
+          <div class="seller-body">
+            <div class="seller-name">Toko Buku Kita</div>
+            <div class="seller-preview">Halo, buku Fisika SMA masih tersedia kok 😊</div>
+          </div>
+          <div class="seller-meta">
+            <span class="seller-time">10:24</span>
+            <span class="seller-unread">2</span>
+          </div>
+        </a>
+        <a href="../Chat Forum - nabila/forum-chat.html" class="seller-item">
+          <div class="seller-avatar" style="background:#FFF3D0;color:#D4940A;">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="seller-body">
+            <div class="seller-name">Aldi Bukuku</div>
+            <div class="seller-preview">Sudah saya kirim ya, cek email kamu</div>
+          </div>
+          <div class="seller-meta">
+            <span class="seller-time">Kemarin</span>
+          </div>
+        </a>
+        <a href="../Chat Forum - nabila/forum-chat.html" class="seller-item">
+          <div class="seller-avatar" style="background:#EDE8FB;color:#7059C4;">
+            <i class="fa-solid fa-user"></i>
+            <span class="online-dot"></span>
+          </div>
+          <div class="seller-body">
+            <div class="seller-name">Buku Second Murah</div>
+            <div class="seller-preview">Harga bisa nego kalau beli lebih dari 3</div>
+          </div>
+          <div class="seller-meta">
+            <span class="seller-time">Senin</span>
+            <span class="seller-unread">1</span>
+          </div>
+        </a>
+        <a href="../Chat Forum - nabila/forum-chat.html" class="seller-item">
+          <div class="seller-avatar" style="background:#E0F8EE;color:#1E8E5A;">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="seller-body">
+            <div class="seller-name">Rina Pustaka</div>
+            <div class="seller-preview">Terima kasih sudah beli ya, semoga bermanfaat!</div>
+          </div>
+          <div class="seller-meta">
+            <span class="seller-time">18 Sep</span>
+          </div>
+        </a>
+      </section>
+    </main>
+
+  </div>
+
+  <script>
+    function showDiskusi() {
+      document.getElementById('tabDiskusi').classList.add('active');
+      document.getElementById('tabPenjual').classList.remove('active');
+      document.getElementById('panelDiskusi').classList.remove('hidden');
+      document.getElementById('panelPenjual').classList.remove('active');
+    }
+
+    function showPenjual() {
+      document.getElementById('tabPenjual').classList.add('active');
+      document.getElementById('tabDiskusi').classList.remove('active');
+      document.getElementById('panelDiskusi').classList.add('hidden');
+      document.getElementById('panelPenjual').classList.add('active');
+    }
+  </script>
+</body>
+</html>

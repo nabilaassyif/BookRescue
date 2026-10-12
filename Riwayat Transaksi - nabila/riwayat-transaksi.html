@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riwayat Transaksi — BookRescue</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../sidebar.css">
+  <link rel="stylesheet" href="riwayat-transaksi.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="brand-row">
+        <a class="brand" href="../Onboarding - clar/index.html">
+          <img src="../img/kucing.webp" alt="BookRescue">
+          <span>BookRescue</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <div class="sidebar-search"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></div>
+      <nav class="nav-list">
+        <a class="nav-link" href="../Home - clar/home.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a class="nav-link" href="../Daftar Forum - ilen/forum.html"><i class="fa-regular fa-comments"></i><span>Forum</span></a>
+        <a class="nav-link" href="../Beli Buku - cath/beli-buku.html"><i class="fa-solid fa-tag"></i><span>Jual / Beli</span></a>
+        <a class="nav-link notifications" href="../Inbox - nabila/inbox.html">
+          <span class="nav-label"><i class="fa-regular fa-bell"></i><span>Notifications</span></span>
+          <span class="notification-count">12</span>
+        </a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <nav class="bottom-nav">
+        <a class="nav-link" href="#"><i class="fa-regular fa-circle-question"></i><span>Support</span></a>
+        <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+      <a class="profile-card" href="../Profil - vania/profile.html">
+        <div class="profile-avatar"><i class="fa-solid fa-user"></i><span class="online-dot"></span></div>
+        <div class="profile-info">
+          <div class="profile-name">Anonymous</div>
+          <div class="profile-email">anonymous@gmail.com</div>
+        </div>
+        <i class="fa-solid fa-chevron-right profile-menu" style="font-size:11px;"></i>
+      </a>
+    </aside>
+
+    <main class="page">
+      <div class="page-header">
+        <a class="back-btn" href="../Profil - vania/profile.html" aria-label="Kembali"><i class="fa-solid fa-arrow-left"></i></a>
+        <h1>Riwayat Transaksi</h1>
+      </div>
+
+      <div class="tab-row">
+        <button id="allTab" class="rtab active" type="button" onclick="showTab('all')">Semua Transaksi</button>
+        <button id="runningTab" class="rtab" type="button" onclick="showTab('running')">Pesanan Berjalan</button>
+      </div>
+
+      <div class="stats-bar" id="statistics">
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-regular fa-file-lines"></i></div>
+          <div><div class="stat-label">Total Transaksi</div><div class="stat-value" id="totalCount">12</div></div>
+        </div>
+        <div class="stat-item bordered">
+          <div class="stat-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div><div class="stat-label">Pembelian</div><div class="stat-value" id="buyCount">7</div></div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
+          <div><div class="stat-label">Penjualan</div><div class="stat-value" id="sellCount">5</div></div>
+        </div>
+      </div>
+
+      <div class="tx-list" id="transactionList">
+        <div class="tx-row" data-type="buy" data-status="completed">
+          <div class="tx-cover tx-cover-bio">BIOLOGI<br>SMA 12</div>
+          <div class="tx-info">
+            <div class="tx-title">Biologi SMA 12</div>
+            <div class="tx-subtitle">(Kurikulum Merdeka)</div>
+            <span class="tx-badge buy"><i class="fa-solid fa-cart-shopping"></i> Beli Buku</span>
+            <div class="tx-date"><i class="fa-regular fa-calendar"></i> 12 Sep 2025 • 14:32</div>
+          </div>
+          <div class="tx-price-col">
+            <div class="tx-price">Rp 75.000</div>
+            <span class="tx-status completed"><i class="fa-solid fa-circle-check"></i> Selesai</span>
+          </div>
+          <button class="tx-detail-btn" type="button">Detail &gt;</button>
+        </div>
+        <div class="tx-row" data-type="buy" data-status="completed">
+          <div class="tx-cover tx-cover-dilan">DILAN<br><small>1990<br>Fidi Baiq</small></div>
+          <div class="tx-info">
+            <div class="tx-title">Dilan 1990 Edisi Revisi</div>
+            <span class="tx-badge buy"><i class="fa-solid fa-cart-shopping"></i> Beli Buku</span>
+            <div class="tx-date"><i class="fa-regular fa-calendar"></i> 8 Sep 2025 • 10:15</div>
+          </div>
+          <div class="tx-price-col">
+            <div class="tx-price">Rp 85.000</div>
+            <span class="tx-status completed"><i class="fa-solid fa-circle-check"></i> Selesai</span>
+          </div>
+          <button class="tx-detail-btn" type="button">Detail &gt;</button>
+        </div>
+        <div class="tx-row" data-type="sell" data-status="completed">
+          <div class="tx-cover tx-cover-laskar">LASKAR<br>PELANGI</div>
+          <div class="tx-info">
+            <div class="tx-title">Laskar Pelangi</div>
+            <div class="tx-subtitle">(Andrea Hirata)</div>
+            <span class="tx-badge sell"><i class="fa-solid fa-tag"></i> Jual Buku</span>
+            <div class="tx-date"><i class="fa-regular fa-calendar"></i> 5 Sep 2025 • 16:20</div>
+          </div>
+          <div class="tx-price-col">
+            <div class="tx-price">Rp 65.000</div>
+            <span class="tx-status completed"><i class="fa-solid fa-circle-check"></i> Selesai</span>
+          </div>
+          <button class="tx-detail-btn" type="button">Detail &gt;</button>
+        </div>
+        <div class="tx-row" data-type="donation" data-status="processing">
+          <div class="tx-cover tx-cover-filosofi">FILOSOFI<br>TERAS</div>
+          <div class="tx-info">
+            <div class="tx-title">Filosofi Teras</div>
+            <span class="tx-badge donate"><i class="fa-solid fa-hand-holding-heart"></i> Donasi</span>
+            <div class="tx-date"><i class="fa-regular fa-calendar"></i> 2 Sep 2025 • 09:45</div>
+          </div>
+          <div class="tx-price-col">
+            <div class="tx-price">Rp 0</div>
+            <span class="tx-status processing"><i class="fa-regular fa-hourglass-half"></i> Diproses</span>
+          </div>
+          <button class="tx-detail-btn" type="button">Detail &gt;</button>
+        </div>
+        <div class="tx-row" data-type="buy" data-status="cancelled">
+          <div class="tx-cover tx-cover-bumi">BUMI<br>MANUSIA</div>
+          <div class="tx-info">
+            <div class="tx-title">Bumi Manusia</div>
+            <div class="tx-subtitle">(Pramoedya Ananta Toer)</div>
+            <span class="tx-badge buy"><i class="fa-solid fa-cart-shopping"></i> Beli Buku</span>
+            <div class="tx-date"><i class="fa-regular fa-calendar"></i> 28 Agu 2025 • 11:05</div>
+          </div>
+          <div class="tx-price-col">
+            <div class="tx-price">Rp 55.000</div>
+            <span class="tx-status cancelled"><i class="fa-solid fa-xmark"></i> Dibatalkan</span>
+          </div>
+          <button class="tx-detail-btn" type="button">Detail &gt;</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function showTab(tab) {
+      const allTab = document.getElementById('allTab');
+      const runningTab = document.getElementById('runningTab');
+      const rows = document.querySelectorAll('.tx-row');
+      if (tab === 'all') {
+        allTab.classList.add('active'); runningTab.classList.remove('active');
+        rows.forEach((r) => { r.hidden = false; });
+      } else {
+        runningTab.classList.add('active'); allTab.classList.remove('active');
+        rows.forEach((r) => { r.hidden = r.dataset.status !== 'processing'; });
+      }
+      const visible = [...rows].filter((r) => !r.hidden);
+      document.getElementById('totalCount').textContent = visible.length;
+      document.getElementById('buyCount').textContent = visible.filter((r) => r.dataset.type === 'buy').length;
+      document.getElementById('sellCount').textContent = visible.filter((r) => r.dataset.type === 'sell').length;
+    }
+    showTab('all');
+  </script>
+</body>
+</html>

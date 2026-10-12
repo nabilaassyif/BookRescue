@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil — BookRescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../sidebar.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="brand-row">
+        <a class="brand" href="../Onboarding - clar/index.html">
+          <img src="../img/kucing.webp" alt="BookRescue">
+          <span>BookRescue</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <div class="sidebar-search"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></div>
+      <nav class="nav-list">
+        <a class="nav-link" href="../Home - clar/home.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a class="nav-link" href="../Daftar Forum - ilen/forum.html"><i class="fa-regular fa-comments"></i><span>Forum</span></a>
+        <a class="nav-link" href="../Beli Buku - cath/beli-buku.html"><i class="fa-solid fa-tag"></i><span>Jual / Beli</span></a>
+        <a class="nav-link notifications" href="../Inbox - nabila/inbox.html">
+          <span class="nav-label"><i class="fa-regular fa-bell"></i><span>Notifications</span></span>
+          <span class="notification-count">12</span>
+        </a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <nav class="bottom-nav">
+        <a class="nav-link" href="#"><i class="fa-regular fa-circle-question"></i><span>Support</span></a>
+        <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+      <a class="profile-card" href="../Profil - vania/profile.html">
+        <div class="profile-avatar"><i class="fa-solid fa-user"></i><span class="online-dot"></span></div>
+        <div class="profile-info">
+          <div class="profile-name">Anonymous</div>
+          <div class="profile-email">anonymous@gmail.com</div>
+        </div>
+        <i class="fa-solid fa-chevron-right profile-menu" style="font-size:11px;"></i>
+      </a>
+    </aside>
+
+    <main class="main">
+      <div class="page-header">
+        <h1>Profile</h1>
+        <button class="add-btn" type="button" aria-label="Tambah buku"><i class="fa-solid fa-plus"></i></button>
+      </div>
+
+      <div class="profile-hero">
+        <div class="hero-avatar"><i class="fa-solid fa-user"></i></div>
+        <div class="hero-info">
+          <h2>Anonymous</h2>
+          <p class="hero-email">anonymous@gmail.com</p>
+          <span class="hero-badge">Penyelamat Buku</span>
+          <p class="hero-quote">"Buku adalah teman hidupku, mari biasakan diri dengan BookRescue!"</p>
+        </div>
+        <button class="edit-btn" type="button"><i class="fa-solid fa-pencil"></i><span>Edit Profil</span></button>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong>67</strong><span>Buku Dibeli</span></div>
+        <div class="stat"><strong>23</strong><span>Buku Dijual</span></div>
+        <div class="stat"><strong>4,9</strong><span>Rating</span></div>
+        <div class="stat"><strong>50</strong><span>Buku Favorit</span></div>
+      </div>
+
+      <div class="info-grid">
+        <div class="card account">
+          <h3>Informasi Akun</h3>
+          <div class="info-row">
+            <div class="info-label"><i class="fa-solid fa-user"></i><span>Nama</span></div>
+            <div class="info-value">Anonymous</div>
+          </div>
+          <div class="info-row">
+            <div class="info-label"><i class="fa-solid fa-envelope"></i><span>Email</span></div>
+            <div class="info-value">anonymous@gmail.com</div>
+          </div>
+          <div class="info-row">
+            <div class="info-label"><i class="fa-regular fa-calendar"></i><span>Bergabung sejak</span></div>
+            <div class="info-value">6 September 2025</div>
+          </div>
+          <div class="about">
+            <div class="info-label"><i class="fa-solid fa-circle-info"></i><span>About Me</span></div>
+            <p>"Manusia yang hobi berbagi buku, menemukan cerita baru, dan menyebarkan manfaat lewat setiap bacaan. Karena satu buku bisa jadi awal dari banyak pengetahuan &lt;3"</p>
+          </div>
+        </div>
+
+        <nav class="card menu">
+          <a href="../Riwayat Transaksi - nabila/riwayat-transaksi.html"><i class="fa-solid fa-clock-rotate-left"></i><span>Riwayat Transaksi</span></a>
+          <a href="../Jual Buku - ilen/jual-buku.html"><i class="fa-solid fa-tag"></i><span>Daftar Jual</span></a>
+          <a href="#"><i class="fa-solid fa-gear"></i><span>Pengaturan</span></a>
+          <a href="#"><i class="fa-solid fa-circle-question"></i><span>Bantuan</span></a>
+          <a href="#"><i class="fa-solid fa-heart"></i><span>Favorit</span></a>
+          <a href="#" class="logout"><i class="fa-solid fa-right-from-bracket"></i><span>Keluar</span></a>
+        </nav>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

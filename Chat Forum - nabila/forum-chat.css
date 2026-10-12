@@ -1,0 +1,467 @@
+/* ================================================
+   FORUM CHAT — Tampilan obrolan grup
+   Color palette: BookRescue brand guide
+   ================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #F6FAFF;
+  color: #1B2A41;
+}
+
+button, input { font: inherit; cursor: pointer; }
+
+/* ---- Konten utama (main di dalam .app-shell) ---- */
+.app-shell > main,
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+  background: #F6FAFF;
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 28px 20px;
+}
+
+.page-title {
+  flex-shrink: 0;
+  margin: 0 0 16px;
+  color: #1B2A41;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Layout dua kolom: chat | detail */
+.forum-layout {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 16px;
+}
+
+/* Kartu chat dan detail */
+.chat-card,
+.detail-card {
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #E6EDF6;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(30, 99, 201, 0.05);
+}
+
+.chat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header chat */
+.chat-header {
+  min-height: 58px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid #E6EDF6;
+}
+
+.back-button {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: #DCEAFB;
+  color: #2F80ED;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.back-button:hover { background: #c8dcf7; }
+
+.chat-heading { flex: 1; min-width: 0; }
+
+.chat-title {
+  margin-bottom: 2px;
+  color: #1B2A41;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.chat-subtitle {
+  overflow: hidden;
+  color: #7C8BA1;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.more-button {
+  padding: 6px;
+  border: 0;
+  background: transparent;
+  color: #7C8BA1;
+  font-size: 15px;
+}
+
+/* Pesan */
+.messages {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #DCEAFB transparent;
+}
+
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+}
+
+.message.outgoing {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.message-avatar {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.avatar-rina  { background: #DCEAFB; color: #2F80ED; }
+.avatar-bima  { background: #EDE8FB; color: #7059C4; }
+.avatar-maya  { background: #E0F8EE; color: #1E8E5A; }
+.avatar-aldi  { background: #FFF3D0; color: #D4940A; }
+
+.message-content {
+  min-width: 0;
+  max-width: calc(100% - 40px);
+}
+
+.message-name {
+  margin-bottom: 3px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.name-rina { color: #2F80ED; }
+.name-bima { color: #7059C4; }
+.name-maya { color: #1E8E5A; }
+.name-aldi { color: #D4940A; }
+
+.message-line {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  min-width: 0;
+}
+
+.outgoing .message-line { justify-content: flex-end; }
+
+.bubble {
+  max-width: 100%;
+  padding: 9px 13px;
+  color: #1B2A41;
+  background: #EAF3FF;
+  border-radius: 0 12px 12px 12px;
+  font-size: 13px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.outgoing .bubble {
+  color: #fff;
+  background: #2F80ED;
+  border-radius: 12px 0 12px 12px;
+}
+
+.message-time {
+  flex-shrink: 0;
+  padding-bottom: 2px;
+  color: #7C8BA1;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+/* Composer */
+.composer {
+  flex-shrink: 0;
+  padding: 10px 14px 12px;
+  border-top: 1px solid #E6EDF6;
+}
+
+.composer-inner {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px 0 12px;
+  border: 1px solid #E6EDF6;
+  border-radius: 10px;
+  background: #F6FAFF;
+}
+
+.attach-button {
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  color: #7C8BA1;
+  font-size: 14px;
+}
+
+.message-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0 8px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #1B2A41;
+  font-size: 13px;
+}
+
+.message-input::placeholder { color: #7C8BA1; }
+
+.send-button {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: #2F80ED;
+  color: #fff;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.send-button:hover { background: #1E63C9; }
+
+/* Panel detail forum */
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 16px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #DCEAFB transparent;
+}
+
+.detail-title {
+  margin: 0 0 16px;
+  color: #1B2A41;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.forum-summary {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #E6EDF6;
+}
+
+.summary-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #DCEAFB;
+  color: #2F80ED;
+  font-size: 14px;
+}
+
+.summary-name {
+  margin-bottom: 4px;
+  color: #1B2A41;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.summary-description {
+  color: #7C8BA1;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.forum-stats {
+  padding: 14px 0;
+  border-bottom: 1px solid #E6EDF6;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #7C8BA1;
+}
+
+.stat-row:last-child { margin-bottom: 0; }
+.stat-label { display: flex; align-items: center; gap: 7px; }
+.stat-label i { color: #2F80ED; }
+.stat-value { color: #1B2A41; font-weight: 700; white-space: nowrap; }
+
+/* Anggota */
+.members-section { padding-top: 14px; }
+
+.members-title {
+  margin-bottom: 10px;
+  color: #1B2A41;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.member {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1B2A41;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.member-avatar {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 11px;
+}
+
+.member .online-dot {
+  width: 7px;
+  height: 7px;
+  right: -1px;
+  bottom: 0;
+  top: auto;
+  border-width: 1px;
+  background: #3DBE8B;
+}
+
+.member-aldi { background: #FFF3D0; color: #D4940A; }
+.member-rina { background: #DCEAFB; color: #2F80ED; }
+.member-bima { background: #EDE8FB; color: #7059C4; }
+.member-maya { background: #E0F8EE; color: #1E8E5A; }
+
+.detail-spacer { flex: 1; min-height: 12px; }
+
+.all-members {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #2F80ED;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.plus-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #DCEAFB;
+  font-size: 9px;
+  color: #2F80ED;
+}
+
+.all-members-label { flex: 1; }
+.all-members > i { color: #7C8BA1; font-size: 10px; }
+
+/* ---- Responsif ---- */
+@media (max-width: 900px) {
+  .content { padding: 20px 20px 16px; }
+  .forum-layout { grid-template-columns: minmax(0, 1fr) 230px; gap: 12px; }
+}
+
+/* Tablet: sembunyikan panel detail, chat full width */
+@media (max-width: 720px) {
+  .content { padding: 16px 14px 12px; }
+  .forum-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .detail-card { display: none; }
+  .chat-card { border-radius: 12px; }
+}
+
+/* Mobile: konten scroll normal */
+@media (max-width: 600px) {
+  .app-shell > main,
+  .main {
+    height: auto;
+    overflow: visible;
+  }
+  .content {
+    padding: 14px 12px 12px;
+    flex: none;
+  }
+  .forum-layout {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .chat-card {
+    height: 70vh;
+    min-height: 400px;
+    border-radius: 10px;
+  }
+}

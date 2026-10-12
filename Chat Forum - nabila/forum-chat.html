@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forum Chat — BookRescue</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../sidebar.css">
+  <link rel="stylesheet" href="forum-chat.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="brand-row">
+        <a class="brand" href="../Onboarding - clar/index.html">
+          <img src="../img/kucing.webp" alt="BookRescue">
+          <span>BookRescue</span>
+        </a>
+        <button class="menu-toggle" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <div class="sidebar-search"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></div>
+      <nav class="nav-list">
+        <a class="nav-link" href="../Home - clar/home.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a class="nav-link active" href="../Daftar Forum - ilen/forum.html"><i class="fa-regular fa-comments"></i><span>Forum</span></a>
+        <a class="nav-link" href="../Beli Buku - cath/beli-buku.html"><i class="fa-solid fa-tag"></i><span>Jual / Beli</span></a>
+        <a class="nav-link notifications" href="../Inbox - nabila/inbox.html">
+          <span class="nav-label"><i class="fa-regular fa-bell"></i><span>Notifications</span></span>
+          <span class="notification-count">12</span>
+        </a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <nav class="bottom-nav">
+        <a class="nav-link" href="#"><i class="fa-regular fa-circle-question"></i><span>Support</span></a>
+        <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+      <a class="profile-card" href="../Profil - vania/profile.html">
+        <div class="profile-avatar"><i class="fa-solid fa-user"></i><span class="online-dot"></span></div>
+        <div class="profile-info">
+          <div class="profile-name">Anonymous</div>
+          <div class="profile-email">anonymous@gmail.com</div>
+        </div>
+        <i class="fa-solid fa-chevron-right profile-menu" style="font-size:11px;"></i>
+      </a>
+    </aside>
+
+    <main class="main">
+      <div class="content">
+        <h1 class="page-title">Forum</h1>
+
+        <div class="forum-layout">
+          <section class="chat-card">
+            <header class="chat-header">
+              <a class="back-button" href="../Daftar Forum - ilen/forum.html" aria-label="Kembali ke forum">
+                <i class="fa-solid fa-arrow-left"></i>
+              </a>
+              <div class="chat-heading">
+                <div class="chat-title">Buku Kuliah Teknik</div>
+                <div class="chat-subtitle">Aldi, Rina, Bima, Maya dan 12 anggota lainnya</div>
+              </div>
+              <button class="more-button" aria-label="Opsi forum"><i class="fa-solid fa-ellipsis"></i></button>
+            </header>
+
+            <div class="messages" id="messages">
+              <div class="message">
+                <div class="message-avatar avatar-rina"><i class="fa-solid fa-user"></i></div>
+                <div class="message-content">
+                  <div class="message-name name-rina">Rina</div>
+                  <div class="message-line">
+                    <div class="bubble">Halo semua! Ada yang punya PDF buku Struktur Data dan Algoritma edisi terbaru?</div>
+                    <span class="message-time">09:12</span>
+                  </div>
+                </div>
+              </div>
+              <div class="message outgoing">
+                <span class="message-time">09:15</span>
+                <div class="message-content">
+                  <div class="message-line">
+                    <div class="bubble">Aku punya kak, versi tahun 2023. Mau dikirim lewat Google Drive?</div>
+                  </div>
+                </div>
+                <div class="message-avatar avatar-rina"><i class="fa-solid fa-user"></i></div>
+              </div>
+              <div class="message">
+                <div class="message-avatar avatar-bima"><i class="fa-solid fa-user"></i></div>
+                <div class="message-content">
+                  <div class="message-name name-bima">Bima</div>
+                  <div class="message-line">
+                    <div class="bubble">Boleh banget! Makasih banyak yaa 🙏</div>
+                    <span class="message-time">09:17</span>
+                  </div>
+                </div>
+              </div>
+              <div class="message">
+                <div class="message-avatar avatar-maya"><i class="fa-solid fa-user"></i></div>
+                <div class="message-content">
+                  <div class="message-name name-maya">Maya</div>
+                  <div class="message-line">
+                    <div class="bubble">Aku juga lagi nyari buku Kalkulus, kalau ada yang punya boleh share disini yaa</div>
+                    <span class="message-time">09:20</span>
+                  </div>
+                </div>
+              </div>
+              <div class="message outgoing">
+                <span class="message-time">09:24</span>
+                <div class="message-content">
+                  <div class="message-line">
+                    <div class="bubble">Aku ada versi digitalnya, nanti aku upload di Google Drive. Link-nya aku share ya.</div>
+                  </div>
+                </div>
+                <div class="message-avatar avatar-rina"><i class="fa-solid fa-user"></i></div>
+              </div>
+              <div class="message">
+                <div class="message-avatar avatar-aldi"><i class="fa-solid fa-user"></i></div>
+                <div class="message-content">
+                  <div class="message-name name-aldi">Aldi</div>
+                  <div class="message-line">
+                    <div class="bubble">Makasih banyak semua! Forum ini sangat membantu 🙌</div>
+                    <span class="message-time">09:26</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form class="composer" id="messageForm">
+              <div class="composer-inner">
+                <button type="button" class="attach-button" aria-label="Lampirkan file"><i class="fa-solid fa-paperclip"></i></button>
+                <input class="message-input" id="messageInput" type="text" placeholder="Tulis pesan..." autocomplete="off">
+                <button type="submit" class="send-button" aria-label="Kirim pesan"><i class="fa-solid fa-paper-plane"></i></button>
+              </div>
+            </form>
+          </section>
+
+          <aside class="detail-card">
+            <h2 class="detail-title">Detail Forum</h2>
+            <div class="forum-summary">
+              <div class="summary-icon"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <div class="summary-name">Buku Kuliah Teknik</div>
+                <div class="summary-description">Diskusi seputar buku kuliah teknik, berbagi file, tanya jawab, dan info seputar perkuliahan.</div>
+              </div>
+            </div>
+            <div class="forum-stats">
+              <div class="stat-row">
+                <span class="stat-label"><i class="fa-solid fa-user-group"></i> Anggota</span>
+                <span class="stat-value">16 orang</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label"><i class="fa-regular fa-message"></i> Jumlah Pesan</span>
+                <span class="stat-value" id="messageCount">42 pesan</span>
+              </div>
+            </div>
+            <div class="members-section">
+              <div class="members-title">Anggota Forum</div>
+              <div class="members-list">
+                <div class="member"><div class="member-avatar member-aldi"><i class="fa-solid fa-user"></i><span class="online-dot"></span></div><span>Aldi</span></div>
+                <div class="member"><div class="member-avatar member-rina"><i class="fa-solid fa-user"></i><span class="online-dot"></span></div><span>Rina</span></div>
+                <div class="member"><div class="member-avatar member-bima"><i class="fa-solid fa-user"></i><span class="online-dot"></span></div><span>Bima</span></div>
+                <div class="member"><div class="member-avatar member-maya"><i class="fa-solid fa-user"></i><span class="online-dot"></span></div><span>Maya</span></div>
+              </div>
+            </div>
+            <div class="detail-spacer"></div>
+            <button type="button" class="all-members" id="allMembersButton">
+              <span class="plus-icon"><i class="fa-solid fa-plus"></i></span>
+              <span class="all-members-label">Lihat semua anggota</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </aside>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const messageForm = document.getElementById("messageForm");
+    const messageInput = document.getElementById("messageInput");
+    const messages = document.getElementById("messages");
+    const messageCount = document.getElementById("messageCount");
+    let totalMessages = 42;
+
+    function getCurrentTime() {
+      const now = new Date();
+      return now.toLocaleTimeString("id-ID", { hour: "2-digit", minute: "2-digit", hour12: false });
+    }
+
+    function addMessage(text) {
+      const message = document.createElement("div");
+      message.className = "message outgoing";
+      const time = document.createElement("span");
+      time.className = "message-time";
+      time.textContent = getCurrentTime();
+      const content = document.createElement("div");
+      content.className = "message-content";
+      const line = document.createElement("div");
+      line.className = "message-line";
+      const bubble = document.createElement("div");
+      bubble.className = "bubble";
+      bubble.textContent = text;
+      const avatar = document.createElement("div");
+      avatar.className = "message-avatar avatar-rina";
+      avatar.innerHTML = '<i class="fa-solid fa-user"></i>';
+      line.appendChild(bubble);
+      content.appendChild(line);
+      message.appendChild(time);
+      message.appendChild(content);
+      message.appendChild(avatar);
+      messages.appendChild(message);
+      messages.scrollTop = messages.scrollHeight;
+      totalMessages += 1;
+      messageCount.textContent = totalMessages + " pesan";
+    }
+
+    messageForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const text = messageInput.value.trim();
+      if (!text) return;
+      addMessage(text);
+      messageInput.value = "";
+      messageInput.focus();
+    });
+  </script>
+</body>
+</html>

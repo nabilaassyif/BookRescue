@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue:      #2F80ED;
+  --blue-dark: #1E63C9;
+  --blue-soft: #DCEAFB;
+  --ink:       #1B2A41;
+  --muted:     #7C8BA1;
+  --line:      #E6EDF6;
+  --star:      #FFB800;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: #F6FAFF;
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+a  { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* Konten utama */
+.main {
+  padding: 36px 32px 40px;
+}
+
+.main h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+
+.filter {
+  max-width: 560px;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue-dark);
+  margin-bottom: 8px;
+}
+
+/* Chip kategori / kondisi */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.category span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  min-width: 80px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.category:hover span {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.category input:checked + span {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(47, 128, 237, 0.25);
+}
+
+/* Input harga */
+.price-row {
+  display: grid;
+  grid-template-columns: 150px 150px;
+  gap: 20px;
+}
+
+.price-input {
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 0 12px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  outline: none;
+}
+
+.price-input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.12);
+}
+
+/* Slider range */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: 12px;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    var(--blue-dark) 0%,
+    var(--blue-dark) var(--val, 50%),
+    #D0DAE8 var(--val, 50%),
+    #D0DAE8 100%
+  );
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(47, 128, 237, 0.3);
+}
+
+.slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 2px solid #fff;
+}
+
+/* Kotak lokasi */
+.box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.location-box i {
+  color: var(--blue);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.location-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.location-box input::placeholder {
+  color: var(--muted);
+}
+
+/* Rating dropdown */
+.rating-select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 260px;
+}
+
+.rating-select-wrapper .select-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--star);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.rating-select {
+  width: 100%;
+  height: 44px;
+  padding: 0 36px 0 34px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.rating-select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.12);
+}
+
+.rating-select-wrapper .select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 11px;
+  pointer-events: none;
+}
+
+/* Tombol terapkan */
+.submit {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: 40px;
+  margin: 28px auto 0;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(47, 128, 237, 0.3);
+  transition: background 0.2s, transform 0.1s;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.submit:hover  { background: var(--blue-dark); }
+.submit:active { transform: scale(0.99); }
+
+/* ---- Responsif ---- */
+@media (max-width: 900px) {
+  .main { padding: 20px 16px 30px; }
+  .price-row { grid-template-columns: 1fr 1fr; gap: 12px; }
+}

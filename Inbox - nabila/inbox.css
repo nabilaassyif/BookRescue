@@ -1,0 +1,167 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: #F6FAFF;
+  color: #1B2A41;
+}
+
+/* Konten utama */
+.page {
+  padding: 36px 32px 40px;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1B2A41;
+}
+
+/* Tab Semua / Belum Dibaca */
+.notif-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.notif-tab {
+  height: 34px;
+  padding: 0 18px;
+  border: 1px solid #E6EDF6;
+  border-radius: 999px;
+  background: #fff;
+  color: #7C8BA1;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.notif-tab.active {
+  background: #2F80ED;
+  border-color: #2F80ED;
+  color: #fff;
+}
+
+.notif-tab:not(.active):hover {
+  background: #DCEAFB;
+  border-color: #2F80ED;
+  color: #1E63C9;
+}
+
+/* Seksi "Hari Ini" / "Sebelumnya" */
+.notif-section {
+  margin-bottom: 28px;
+}
+
+.notif-section h2 {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #7C8BA1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.notif-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Kartu notifikasi */
+.notif-card {
+  min-height: 76px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #E6EDF6;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.notif-card:hover {
+  box-shadow: 0 4px 12px rgba(47, 128, 237, 0.08);
+  border-color: #DCEAFB;
+}
+
+/* Ikon lingkaran */
+.notif-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.notif-icon.blue   { background: #DCEAFB; color: #2F80ED; }
+.notif-icon.orange { background: #FDE6DA; color: #E0703A; }
+.notif-icon.green  { background: #E0F8EE; color: #1E8E5A; }
+.notif-icon.purple { background: #EDE8FB; color: #7059C4; }
+
+/* Teks notifikasi */
+.notif-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.notif-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1B2A41;
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+
+.notif-desc {
+  font-size: 12px;
+  color: #7C8BA1;
+  line-height: 1.4;
+}
+
+/* Meta */
+.notif-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 64px;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.notif-time {
+  color: #7C8BA1;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.unread-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2F80ED;
+  flex-shrink: 0;
+}
+
+.notif-arrow {
+  color: #C0C8D4;
+  font-size: 12px;
+}
+
+/* ---- Responsif ---- */
+@media (max-width: 760px) {
+  .page { padding: 24px 16px; }
+  .notif-card { padding: 12px 14px; gap: 12px; }
+  .notif-icon { width: 38px; height: 38px; min-width: 38px; font-size: 16px; }
+}

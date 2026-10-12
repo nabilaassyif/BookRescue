@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Latar belakang layar penuh */
+.scene {
+  background-image: url(../img/bg.webp);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---- Halaman Onboarding ---- */
+.branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.BookRescueText {
+  width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 15px;
+}
+
+.BookRescueCat {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 50px;
+  padding-bottom: 50px;
+}
+
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 37px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 20px;
+  background-color: #e4eef6;
+  color: #1765c0;
+  font-size: 20px;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.signup:hover {
+  background: #cfe2ff;
+  transform: translateY(-1px);
+}
+
+.askaccount {
+  margin: 10px;
+  text-align: center;
+  font-size: 10px;
+  color: #8a9aaa;
+}
+
+/* ---- Halaman Signup / Signin ---- */
+.signupCard {
+  display: flex;
+  width: 900px;
+  max-width: 100%;
+  border-radius: 20px;
+  background-color: azure;
+  overflow: hidden;
+}
+
+.brandingPanel {
+  padding: 0 35px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #9ac6ff 0%, #c5dcff 55%, #a8ceff 100%);
+}
+
+.logoTextCard {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+.logoCatCard {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.formPanel {
+  flex: 1.3;
+  padding: 30px;
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  color: #1765c0;
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+input {
+  border: 1px solid #7daaff;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 10px;
+}
+
+label {
+  font-family: 'Nunito', sans-serif;
+  color: #1765c0;
+  font-size: 14px;
+}
+
+/* Area nomor telepon */
+.phoneRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.phoneRow .field {
+  flex: 1;
+  min-width: 0;
+}
+
+.sendCode {
+  padding: 0 14px;
+  height: 36px;
+  border: none;
+  border-radius: 7px;
+  background-color: #dceaff;
+  color: #3679df;
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.sendCode:hover {
+  background-color: #d2e3ff;
+}
+
+/* Kotak kode verifikasi OTP */
+.inputCode {
+  display: flex;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.inputCode input {
+  width: 47px;
+  height: 47px;
+  padding: 0;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #7fa5f0;
+  border-radius: 7px;
+  flex-shrink: 0;
+}
+
+/* Seksi verifikasi */
+.verificationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.verificationLabel {
+  font-family: 'Nunito', sans-serif;
+  color: #3679df;
+  font-size: 14px;
+}
+
+.verificationSection .verifyLine {
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+.exp,
+.verifyLine,
+.switch-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  color: #888888;
+  margin: 0;
+}
+
+.verifyLine a,
+.switch-text a {
+  color: #1765c0;
+  text-decoration: none;
+}
+
+.verifyLine a:hover,
+.switch-text a:hover {
+  text-decoration: underline;
+}
+
+/* Tombol utama */
+.primary-button {
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background-color: #e1edff;
+  color: #3980ed;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 0.2s;
+}
+
+.primary-button:hover {
+  background-color: #d2e3ff;
+}
+
+.switch-text {
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* Pesan status form (demo) */
+.message {
+  min-height: 1em;
+  font-size: 13px;
+  margin: 0;
+}
+
+@media (max-width: 680px) {
+  .signupCard {
+    flex-direction: column;
+    width: 100%;
+    margin: 16px;
+  }
+
+  .brandingPanel {
+    padding: 24px;
+  }
+
+  .logoCatCard {
+    width: 160px;
+  }
+
+  .formPanel {
+    padding: 24px 20px;
+  }
+
+  .inputCode {
+    gap: 10px;
+  }
+
+  .inputCode input {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}

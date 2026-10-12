@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifikasi Buku — BookRescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-overlay" id="popup">
+    <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+      <img src="../img/kucing2.webp" alt="" class="popup-img">
+      <h2 id="popup-title">Buku incaranmu sudah tersedia!</h2>
+      <p>Serial Bumi karya Tere Liye baru dipasang di dekat kamu. Yuk, cek koleksinya sebelum keduluan orang lain!</p>
+
+      <div class="popup-actions">
+        <a class="btn btn-primary" href="../Beli Buku - cath/beli-buku.html">Lihat Sekarang</a>
+        <button class="btn btn-outline" type="button" id="tutup">Lihat Nanti</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const popup = document.getElementById("popup");
+
+    function tutupPopup() {
+      popup.classList.add("hidden");
+    }
+
+    document.getElementById("tutup").addEventListener("click", tutupPopup);
+    popup.addEventListener("click", function (e) {
+      if (e.target === popup) tutupPopup();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") tutupPopup();
+    });
+  </script>
+</body>
+</html>

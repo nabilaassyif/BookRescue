@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filter Buku — BookRescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../sidebar.css">
+  <link rel="stylesheet" href="filter-buku.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="brand-row">
+        <a class="brand" href="../Onboarding - clar/index.html">
+          <img src="../img/kucing.webp" alt="BookRescue">
+          <span>BookRescue</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <div class="sidebar-search"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></div>
+      <nav class="nav-list">
+        <a class="nav-link" href="../Home - clar/home.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a class="nav-link" href="../Daftar Forum - ilen/forum.html"><i class="fa-regular fa-comments"></i><span>Forum</span></a>
+        <a class="nav-link active" href="../Beli Buku - cath/beli-buku.html"><i class="fa-solid fa-tag"></i><span>Jual / Beli</span></a>
+        <a class="nav-link notifications" href="../Inbox - nabila/inbox.html">
+          <span class="nav-label"><i class="fa-regular fa-bell"></i><span>Notifications</span></span>
+          <span class="notification-count">12</span>
+        </a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <nav class="bottom-nav">
+        <a class="nav-link" href="#"><i class="fa-regular fa-circle-question"></i><span>Support</span></a>
+        <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+      <a class="profile-card" href="../Profil - vania/profile.html">
+        <div class="profile-avatar"><i class="fa-solid fa-user"></i><span class="online-dot"></span></div>
+        <div class="profile-info">
+          <div class="profile-name">Anonymous</div>
+          <div class="profile-email">anonymous@gmail.com</div>
+        </div>
+        <i class="fa-solid fa-chevron-right profile-menu" style="font-size:11px;"></i>
+      </a>
+    </aside>
+
+    <main class="main">
+      <h1>Filter Buku</h1>
+
+      <form class="filter" onsubmit="return false;">
+        <div class="field">
+          <label class="field-label">Kategori</label>
+          <div class="categories">
+            <label class="category"><input type="radio" name="kategori" checked><span>Semua</span></label>
+            <label class="category"><input type="radio" name="kategori"><span>Non-Fiksi</span></label>
+            <label class="category"><input type="radio" name="kategori"><span>Fiksi</span></label>
+            <label class="category"><input type="radio" name="kategori"><span>Pelajaran</span></label>
+            <label class="category"><input type="radio" name="kategori"><span>Lainnya</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label class="field-label">Harga</label>
+          <div class="price-row">
+            <input type="text" class="price-input" value="Rp 0">
+            <input type="text" class="price-input" value="Rp 500.000">
+          </div>
+          <input type="range" class="slider" min="0" max="100" value="70" style="--val: 70%">
+        </div>
+        <div class="field">
+          <label class="field-label">Kondisi</label>
+          <div class="categories">
+            <label class="category"><input type="radio" name="kondisi" checked><span>Semua</span></label>
+            <label class="category"><input type="radio" name="kondisi"><span>Baru</span></label>
+            <label class="category"><input type="radio" name="kondisi"><span>Like New</span></label>
+            <label class="category"><input type="radio" name="kondisi"><span>Bekas</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label class="field-label">Jarak Maksimal</label>
+          <input type="range" class="slider" min="0" max="100" value="30" style="--val: 30%">
+        </div>
+        <div class="field">
+          <label class="field-label">Lokasi</label>
+          <div class="box location-box">
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" placeholder="Tuliskan Lokasi">
+          </div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="ratingSelect">Rating</label>
+          <div class="rating-select-wrapper">
+            <i class="fa-solid fa-star select-icon"></i>
+            <select class="rating-select" id="ratingSelect" name="rating">
+              <option value="">Semua Rating</option>
+              <option value="5">⭐ 5 — Bintang 5</option>
+              <option value="4" selected>⭐ 4 ke atas</option>
+              <option value="3">⭐ 3 ke atas</option>
+              <option value="2">⭐ 2 ke atas</option>
+              <option value="1">⭐ 1 ke atas</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-arrow"></i>
+          </div>
+        </div>
+        <button type="submit" class="submit">Terapkan Filter</button>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    document.querySelectorAll('.slider').forEach(function (s) {
+      s.addEventListener('input', function () {
+        s.style.setProperty('--val', s.value + '%');
+      });
+    });
+  </script>
+</body>
+</html>

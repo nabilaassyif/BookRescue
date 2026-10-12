@@ -1,0 +1,320 @@
+* { box-sizing: border-box; }
+
+:root {
+  --blue:      #2F80ED;
+  --blue-dark: #1E63C9;
+  --blue-soft: #DCEAFB;
+  --ink:       #1B2A41;
+  --muted:     #7C8BA1;
+  --line:      #E6EDF6;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Inter", Arial, sans-serif;
+  background: #F6FAFF;
+}
+
+/* ---- Konten utama ---- */
+.page {
+  padding: 36px 32px 40px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Tab Jual / Beli */
+.mode-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+  max-width: 480px;
+}
+
+.mode-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  border: 0;
+  border-radius: 22px;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mode-tab.active {
+  color: #fff;
+  background: var(--blue);
+  box-shadow: 0 3px 8px rgba(47, 128, 237, 0.28);
+}
+
+/* Search bar */
+.search-box {
+  display: flex;
+  align-items: center;
+  height: 42px;
+  gap: 10px;
+  padding: 0 14px;
+  margin-bottom: 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: #aaa;
+  cursor: text;
+}
+
+.search-box > i {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.search-box input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: var(--ink);
+  background: transparent;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+.search-box input::placeholder { color: #b1b1b1; }
+
+/* Baris filter */
+.filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.condition-tabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.condition {
+  min-width: 90px;
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: #4c6088;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, color 0.2s;
+}
+
+.condition.active {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
+.filter-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: #4c6088;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.filter-button:hover { background: #f0f5ff; }
+
+.filter-chevron {
+  font-size: 11px;
+}
+
+/* Grid kartu buku */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 20px;
+}
+
+.book-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+  height: 160px;
+  padding: 12px 12px 10px 14px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 6px rgba(30, 99, 201, 0.06);
+}
+
+/* Sampul buku */
+.book-cover {
+  position: relative;
+  flex: 0 0 90px;
+  width: 90px;
+  height: 130px;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #eef0f5;
+}
+
+.book-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Detail teks */
+.book-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 4px 4px 0 14px;
+}
+
+.book-title {
+  overflow: hidden;
+  color: var(--blue-dark);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.author {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.price {
+  margin-top: 6px;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.rating {
+  margin-top: 4px;
+  color: #62666c;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.rating .fa-star {
+  color: #FFB800;
+  font-size: 10px;
+}
+
+.rating .pin {
+  margin-left: 6px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* Label kondisi */
+.condition-label {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 3px 8px;
+  border: 1px solid;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.condition-label.good {
+  border-color: #3DBE8B;
+  background: #E8F8F2;
+  color: #1E8E5A;
+}
+
+.condition-label.poor {
+  border-color: #F26B5B;
+  background: #FFF0EE;
+  color: #C5192D;
+}
+
+/* Bookmark dan panah */
+.bookmark,
+.card-arrow {
+  position: absolute;
+  bottom: 11px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--blue-dark);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.15s, transform 0.15s;
+}
+
+.bookmark {
+  left: 116px;
+  font-size: 14px;
+  width: 20px;
+  height: 22px;
+}
+
+.bookmark:hover { transform: translateY(-1px); }
+.bookmark.is-saved { color: var(--blue); }
+
+.card-arrow {
+  right: 14px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.book-card[hidden] { display: none !important; }
+
+/* ---- Responsif ---- */
+@media (max-width: 900px) {
+  .page { padding: 28px 20px 30px; }
+  .book-grid { gap: 12px; }
+}
+
+@media (max-width: 760px) {
+  .page { padding: 22px 16px; }
+  .mode-tabs { max-width: 100%; }
+  .filter-row { flex-direction: column; align-items: flex-start; }
+  .condition-tabs { width: 100%; }
+  .book-grid { grid-template-columns: 1fr; }
+  .book-card { height: 155px; }
+}

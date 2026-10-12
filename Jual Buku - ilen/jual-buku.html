@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jual Buku — BookRescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../sidebar.css">
+  <link rel="stylesheet" href="jual-buku.css">
+</head>
+<body>
+  <div class="app-shell">
+
+    <aside class="sidebar">
+      <div class="brand-row">
+        <a class="brand" href="../Onboarding - clar/index.html">
+          <img src="../img/kucing.webp" alt="BookRescue">
+          <span>BookRescue</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Buka menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <div class="sidebar-search"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></div>
+      <nav class="nav-list">
+        <a class="nav-link" href="../Home - clar/home.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <a class="nav-link" href="../Daftar Forum - ilen/forum.html"><i class="fa-regular fa-comments"></i><span>Forum</span></a>
+        <a class="nav-link active" href="../Beli Buku - cath/beli-buku.html"><i class="fa-solid fa-tag"></i><span>Jual / Beli</span></a>
+        <a class="nav-link notifications" href="../Inbox - nabila/inbox.html">
+          <span class="nav-label"><i class="fa-regular fa-bell"></i><span>Notifications</span></span>
+          <span class="notification-count">12</span>
+        </a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <nav class="bottom-nav">
+        <a class="nav-link" href="#"><i class="fa-regular fa-circle-question"></i><span>Support</span></a>
+        <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+      <a class="profile-card" href="../Profil - vania/profile.html">
+        <div class="profile-avatar"><i class="fa-solid fa-user"></i><span class="online-dot"></span></div>
+        <div class="profile-info">
+          <div class="profile-name">Anonymous</div>
+          <div class="profile-email">anonymous@gmail.com</div>
+        </div>
+        <i class="fa-solid fa-chevron-right profile-menu" style="font-size:11px;"></i>
+      </a>
+    </aside>
+
+    <main class="main">
+      <h1>Jual Beli Buku</h1>
+
+      <div class="tabs">
+        <a class="tab active" href="jual-buku.html">Jual Buku</a>
+        <a class="tab" href="../Beli Buku - cath/beli-buku.html">Beli Buku</a>
+      </div>
+
+      <form class="form" onsubmit="return false;">
+        <div class="photos">
+          <label class="photo photo-main">
+            <input type="file" accept="image/*" hidden>
+            <i class="fa-solid fa-camera"></i>
+            <span>Tambah Foto</span>
+          </label>
+          <div class="photo-side">
+            <label class="photo photo-small"><input type="file" accept="image/*" hidden><i class="fa-regular fa-image"></i></label>
+            <label class="photo photo-small"><input type="file" accept="image/*" hidden><i class="fa-regular fa-image"></i></label>
+          </div>
+          <p class="photo-hint">Foto sampul depan dan belakang membantu pembeli menilai kondisi buku</p>
+        </div>
+
+        <div class="field">
+          <label for="judul">Judul Buku</label>
+          <input type="text" id="judul" name="judul">
+        </div>
+        <div class="field">
+          <label for="penulis">Penulis</label>
+          <input type="text" id="penulis" name="penulis" placeholder="Nama penulis">
+        </div>
+
+        <div class="field">
+          <label>Kategori</label>
+          <div class="categories">
+            <label class="category"><input type="radio" name="kategori" value="non-fiksi" checked><span>Non-Fiksi</span></label>
+            <label class="category"><input type="radio" name="kategori" value="fiksi"><span>Fiksi</span></label>
+            <label class="category"><input type="radio" name="kategori" value="pelajaran"><span>Pelajaran</span></label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Kondisi</label>
+          <div class="categories">
+            <label class="category"><input type="radio" name="kondisi" value="baru"><span>Baru</span></label>
+            <label class="category"><input type="radio" name="kondisi" value="like-new" checked><span>Like New</span></label>
+            <label class="category"><input type="radio" name="kondisi" value="bekas"><span>Bekas</span></label>
+          </div>
+        </div>
+
+        <div class="prices">
+          <div class="field">
+            <label for="harga-asli">Harga asli</label>
+            <input type="text" id="harga-asli" class="price-input" value="Rp 185.000">
+          </div>
+          <div class="field">
+            <label for="harga-jual">Harga Jual</label>
+            <input type="text" id="harga-jual" class="price-input" value="Rp 75.000">
+          </div>
+          <small class="saving">Hemat 59% dari harga baru</small>
+        </div>
+
+        <button type="submit" class="submit">Pasang Buku</button>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

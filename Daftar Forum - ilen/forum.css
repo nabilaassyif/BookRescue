@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue:      #2F80ED;
+  --blue-dark: #1E63C9;
+  --blue-soft: #DCEAFB;
+  --ink:       #1B2A41;
+  --muted:     #7C8BA1;
+  --line:      #E6EDF6;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: #F6FAFF;
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+a       { text-decoration: none; color: inherit; }
+button  { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* Konten utama */
+.main {
+  flex: 1;
+  max-width: 720px;
+  padding: 36px 32px 40px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.page-header h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.add-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-btn:hover { background: var(--blue-soft); }
+
+/* Search forum */
+.search-forum {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.search-forum input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.search-forum input::placeholder { color: #C0C8D4; }
+
+/* Tab Ruang Diskusi / Pesan Penjual */
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  height: 36px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.tab.active {
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(47, 128, 237, 0.28);
+}
+
+.tab:not(.active):hover { background: #c8dcf7; }
+
+/* Daftar thread */
+.thread-list {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0 14px;
+}
+
+.thread {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.thread:last-child { border-bottom: none; }
+.thread:hover h3  { color: var(--blue-dark); }
+
+.thread-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.thread-icon.blue   { background: #DCEAFB; color: #2F80ED; }
+.thread-icon.orange { background: #FDE6DA; color: #E0703A; }
+.thread-icon.yellow { background: #FFF3D0; color: #D4940A; }
+.thread-icon.purple { background: #EDE8FB; color: #7059C4; }
+.thread-icon.green  { background: #E0F8EE; color: #1E8E5A; }
+
+.thread-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.thread-text h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 3px;
+  transition: color 0.15s;
+}
+
+.thread-text p {
+  font-size: 11px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.thread-meta {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding-top: 2px;
+  min-width: 40px;
+}
+
+.time {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.unread {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Panel Pesan Penjual (tersembunyi secara default) */
+.seller-list {
+  display: none;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0 14px;
+}
+
+.seller-list.active { display: block; }
+.thread-list.hidden { display: none; }
+
+.seller-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.seller-item:last-child { border-bottom: none; }
+.seller-item:hover .seller-name { color: var(--blue-dark); }
+
+.seller-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--blue-soft);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.seller-avatar .online-dot {
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #3DBE8B;
+}
+
+.seller-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.seller-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 3px;
+  transition: color 0.15s;
+}
+
+.seller-preview {
+  font-size: 11px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.seller-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  min-width: 44px;
+}
+
+.seller-time {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.seller-unread {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #3DBE8B;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- Responsif ---- */
+@media (max-width: 900px) {
+  .main { max-width: 100%; padding: 20px 16px 30px; }
+  .tabs { gap: 10px; }
+}

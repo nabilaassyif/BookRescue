@@ -1,0 +1,347 @@
+/* ================================================
+   SIDEBAR BERSAMA — BookRescue
+   Semua halaman yang punya sidebar menggunakan file ini.
+   Wrapper utama SELALU pakai class .app-shell
+   ================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ---- Shell: sidebar + konten berdampingan ---- */
+.app-shell {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  align-items: stretch;
+}
+
+/* ---- Sidebar ---- */
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  padding: 20px 12px 24px;
+  background: #DCEAFB;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;           /* Firefox */
+  -ms-overflow-style: none;        /* IE/Edge */
+}
+.sidebar::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+/* Baris logo + hamburger */
+.brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px 18px;
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2F80ED;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 28px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.menu-toggle {
+  border: 0;
+  background: transparent;
+  color: #2F80ED;
+  font-size: 17px;
+  padding: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Search box */
+.sidebar-search {
+  height: 38px;
+  flex-shrink: 0;
+  margin-bottom: 16px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border-radius: 8px;
+  color: #1E63C9;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.sidebar-search i {
+  font-size: 13px;
+  color: #7C8BA1;
+}
+
+/* Nav list */
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.nav-link {
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  color: #1E63C9;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition: background 0.15s;
+  white-space: nowrap;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.nav-link i {
+  width: 16px;
+  text-align: center;
+  font-size: 14px;
+  flex-shrink: 0;
+  color: #2F80ED;
+}
+
+.nav-link:hover { background: #c8dcf7; }
+
+.nav-link.active {
+  background: #fff;
+  border-color: #2F80ED;
+  color: #2F80ED;
+}
+
+.nav-link.notifications { justify-content: space-between; }
+
+.nav-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-count {
+  min-width: 22px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: #F0625B;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+  padding: 0 4px;
+}
+
+/* Spacer */
+.sidebar-spacer {
+  flex: 1;
+  min-height: 12px;
+}
+
+/* Bottom nav */
+.bottom-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+/* Profile card — anchor, klik ke halaman profil */
+a.profile-card,
+.profile-card {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px;
+  background: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  border: 1px solid transparent;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+a.profile-card:hover,
+.profile-card:hover {
+  background: #EAF3FF;
+  border-color: #2F80ED;
+}
+
+.profile-avatar {
+  width: 34px;
+  height: 34px;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #DCEAFB;
+  color: #2F80ED;
+  font-size: 15px;
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #3DBE8B;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-name {
+  margin-bottom: 2px;
+  color: #1E63C9;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-email {
+  color: #7C8BA1;
+  font-size: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-menu {
+  border: 0;
+  background: transparent;
+  color: #7C8BA1;
+  padding: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+/* ---- Konten utama (semua varian nama class) ---- */
+.app-shell > main,
+.app-shell > .page,
+.app-shell > .main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  background: #F6FAFF;
+  overflow-y: auto;
+}
+
+/* ============================================================
+   RESPONSIF
+   Desktop  ≥ 901px  : sidebar 260px sticky, konten di kanan
+   Tablet  601–900px : sidebar 220px sticky
+   Mobile  ≤ 600px  : sidebar horizontal bar di atas konten
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+    padding: 18px 10px 20px;
+  }
+  .brand { font-size: 14px; }
+  .brand img { width: 24px; height: 20px; }
+  .nav-link { height: 36px; font-size: 12px; gap: 8px; padding: 0 10px; }
+  .nav-link i { font-size: 13px; }
+  .sidebar-search { height: 35px; font-size: 12px; }
+}
+
+@media (max-width: 600px) {
+  /* Sidebar jadi bar horizontal di atas */
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    position: relative;
+    padding: 10px 12px 8px;
+    overflow: visible;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .brand-row { padding: 0 2px 8px; }
+
+  /* Sembunyikan search, spacer, bottom-nav, profile di mobile */
+  .sidebar-search,
+  .sidebar-spacer,
+  .bottom-nav,
+  a.profile-card,
+  .profile-card { display: none; }
+
+  /* Nav links jadi row horizontal scrollable */
+  .nav-list {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 4px;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+  .nav-list::-webkit-scrollbar { display: none; }
+
+  .nav-link {
+    height: 32px;
+    padding: 0 10px;
+    font-size: 11px;
+    gap: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .nav-link i { font-size: 12px; width: auto; }
+  .nav-label { gap: 5px; }
+
+  /* Konten tidak min-height 100vh di mobile */
+  .app-shell > main,
+  .app-shell > .page,
+  .app-shell > .main {
+    min-height: 0;
+    overflow-y: visible;
+  }
+}

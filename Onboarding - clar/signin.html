@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookRescue | Masuk</title>
+  <link rel="stylesheet" href="onboarding.css">
+  <script src="onboarding.js" defer></script>
+</head>
+<body>
+  <main class="scene">
+    <div class="signupCard">
+      <aside class="brandingPanel">
+        <img src="../img/Logo.webp" alt="BookRescue" class="logoTextCard">
+        <img src="../img/kucing2.webp" alt="Maskot BookRescue" class="logoCatCard">
+      </aside>
+
+      <div class="formPanel">
+        <h1>Welcome Back!</h1>
+        <form data-form>
+          <div class="phoneRow">
+            <div class="field">
+              <label for="signin-phone">No. Telp</label>
+              <input id="signin-phone" name="phone" type="tel" placeholder="08xxxxxxxxxx" required>
+            </div>
+            <button class="sendCode" type="button" data-send-code>Kirim kode</button>
+          </div>
+
+          <div class="verificationSection">
+            <label class="verificationLabel">Kode Verifikasi</label>
+            <p class="exp">Masukkan kode 5 digit yang telah dikirim ke nomormu.</p>
+            <div class="inputCode" aria-label="Kode verifikasi 5 digit">
+              <input aria-label="Digit 1" inputmode="numeric" maxlength="1" required>
+              <input aria-label="Digit 2" inputmode="numeric" maxlength="1" required>
+              <input aria-label="Digit 3" inputmode="numeric" maxlength="1" required>
+              <input aria-label="Digit 4" inputmode="numeric" maxlength="1" required>
+              <input aria-label="Digit 5" inputmode="numeric" maxlength="1" required>
+            </div>
+            <p class="verifyLine">
+              Tidak menerima kode? <a href="#" onclick="return false;">Kirim Ulang Kode</a>
+            </p>
+          </div>
+
+          <button class="primary-button" type="submit">Sign In</button>
+          <p class="message" role="status"></p>
+          <p class="switch-text">Belum punya akun? <a href="signup.html">Sign Up</a></p>
+          <p class="switch-text demo-link">Hanya ingin lihat-lihat? <a href="../Home - clar/home.html">Masuk sebagai tamu →</a></p>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

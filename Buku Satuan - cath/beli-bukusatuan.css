@@ -1,0 +1,323 @@
+/* ================================================
+   DETAIL BUKU (BUKU SATUAN)
+   Color palette: BookRescue brand guide
+   ================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --blue:      #2F80ED;
+  --blue-dark: #1E63C9;
+  --blue-soft: #DCEAFB;
+  --ink:       #1B2A41;
+  --muted:     #7C8BA1;
+  --line:      #E6EDF6;
+  --green:     #3DBE8B;
+  --yellow:    #FFB800;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #F6FAFF;
+  color: var(--ink);
+  font-family: "Inter", Arial, sans-serif;
+}
+
+a      { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ---- Konten utama ---- */
+.page {
+  padding: 32px 28px 40px;
+}
+
+h1 {
+  margin: 0 0 24px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Layout dua kolom: sampul | detail */
+.product-layout {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  column-gap: 28px;
+  align-items: start;
+}
+
+.cover-column {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.book-cover {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #E6EDF6;
+  box-shadow: 0 4px 12px rgba(30, 99, 201, 0.12);
+}
+
+.book-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Kolom detail */
+.details-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 0;
+  padding-left: 4px;
+  border-left: 2px solid var(--line);
+  padding-left: 20px;
+}
+
+.book-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.author {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.price {
+  color: var(--blue);
+  font-size: 22px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border: 1px solid var(--green);
+  border-radius: 999px;
+  background: #E0F8EE;
+  color: #1E8E5A;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--yellow);
+  font-size: 14px;
+}
+
+.muted-star { color: #D0DAE8; }
+
+.rating-text {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.genre    { border-color: #2F80ED; background: #EAF3FF; color: #1E63C9; }
+.condition { border-color: var(--green); background: #E0F8EE; color: #1E8E5A; }
+.distance  { border-color: #FFB800; background: #FFF8E0; color: #A07000; }
+
+/* Deskripsi */
+.description {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.description h3 {
+  margin: 0 0 6px;
+  color: var(--blue-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.description p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* Kartu penjual */
+.seller-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--blue-soft);
+  border: 1px solid #C4D8F5;
+}
+
+.seller-avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2F80ED;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.seller-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 2px;
+}
+
+.seller-info strong {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.seller-info span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.chat-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  padding: 6px 16px;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  color: var(--blue);
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.chat-button:hover { background: var(--blue-soft); }
+
+/* Aksi: Simpan + Beli */
+.action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.save-button,
+.buy-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.save-button {
+  border: 1.5px solid var(--blue);
+  background: #fff;
+  color: var(--blue);
+}
+
+.save-button:hover  { background: var(--blue-soft); }
+.save-button.is-saved { background: var(--blue-soft); }
+
+.buy-button {
+  border: 0;
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(47, 128, 237, 0.28);
+}
+
+.buy-button:hover { background: var(--blue-dark); }
+
+/* ---- Responsif ---- */
+@media (max-width: 860px) {
+  .page { padding: 24px 20px 32px; }
+  .product-layout { grid-template-columns: 160px minmax(0, 1fr); column-gap: 20px; }
+}
+
+@media (max-width: 600px) {
+  .page { padding: 20px 16px 28px; }
+  .product-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cover-column { justify-content: center; }
+  .book-cover { width: min(100%, 220px); }
+  .details-column {
+    border-left: 0;
+    padding-left: 0;
+    padding-top: 0;
+    border-top: 2px solid var(--line);
+    padding-top: 16px;
+  }
+  .action-row { grid-template-columns: 1fr; }
+}
